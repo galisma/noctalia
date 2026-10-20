@@ -793,7 +793,6 @@ void CalendarService::fetchIcs(const CalendarConfig::Account& account) {
   req.url = url;
   req.followRedirects = true;
   req.headers.emplace_back("Accept: text/calendar, */*;q=0.5");
-  req.headers.emplace_back("User-Agent: Noctalia");
 
   m_httpClient.request(req, [this, accountId, displayName, colorHex](HttpResponse resp) {
     if (!resp.transportOk || resp.status != 200) {
